@@ -69,14 +69,14 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	    bluePaint.setColor(Color.BLUE);
 	    bluePaint.setStrokeWidth(3);  
 	    bluePaint.setStyle(Paint.Style.FILL);  
-	    bluePaint.setAlpha(100);
+	    bluePaint.setAlpha(120);
 	    
 	    
 	    redPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	    redPaint.setColor(Color.RED);
 	    redPaint.setStrokeWidth(3);  
 	    redPaint.setStyle(Paint.Style.FILL);  
-	    redPaint.setAlpha(100);
+	    redPaint.setAlpha(120);
 		
 		kangaroo = BitmapFactory.decodeResource(getResources(),
 				R.drawable.sid);
@@ -201,7 +201,8 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
-	    canvasthread.setRunning(true);
+	    
+		canvasthread.setRunning(true);
 	    canvasthread.start();
 	    
 	    Log.d(TAG,"Dimensions of the image "+kangaroo.getWidth()+"  "+kangaroo.getHeight());
@@ -345,6 +346,10 @@ public class Panel extends SurfaceView implements SurfaceHolder.Callback{
       float y = event.getY(0) + event.getY(1);
       point.set(x / 2, y / 2);
    }
+   
+   public void updateStates(){
+	 //Dummy method() to handle the States from a blog ..
+	 }
 
 
 }   

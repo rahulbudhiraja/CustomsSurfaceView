@@ -27,7 +27,8 @@ public class CanvasThread extends Thread {
             {
 	            try 
 	            {
-	                c = _surfaceHolder.lockCanvas(null);
+	                c = _surfaceHolder.lockCanvas();
+	                
 	                synchronized (_surfaceHolder) {
 	                    _panel.onDraw(c);
 	                }
